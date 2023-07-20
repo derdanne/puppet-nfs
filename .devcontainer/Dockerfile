@@ -1,7 +1,6 @@
-FROM mcr.microsoft.com/vscode/devcontainers/ruby:3
+FROM puppet/pdk:latest
 
-ENV DEBIAN_FRONTEND=noninteractive
-RUN curl -L https://apt.puppet.com/puppet-tools-release-focal.deb -o /tmp/puppet-tools-release-focal.deb && \
-    sudo dpkg -i /tmp/puppet-tools-release-focal.deb && \
-    sudo apt-get update && \
-    sudo apt-get install pdk
+# [Optional] Uncomment this section to install additional packages.
+# RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
+#     && apt-get -y install --no-install-recommends <your-package-list-here>
+

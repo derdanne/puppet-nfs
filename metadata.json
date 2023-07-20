@@ -1,20 +1,34 @@
 {
   "name": "derdanne-nfs",
   "version": "2.1.11",
-  "source": "https://github.com/derdanne/puppet-nfs.git",
   "author": "derdanne",
-  "license": "Apache-2.0",
   "summary": "Installs and configures NFS server and clients",
+  "license": "Apache-2.0",
+  "source": "https://github.com/derdanne/puppet-nfs.git",
   "project_page": "https://github.com/derdanne/puppet-nfs",
   "issues_url": "https://github.com/derdanne/puppet-nfs/issues",
   "dependencies": [
-    {"name":"puppetlabs/stdlib","version_requirement":">= 4.5.0 < 9.0.0"},
-    {"name":"puppetlabs/concat","version_requirement":">= 1.1.2 < 8.0.0"},
-    {"name":"puppetlabs/transition","version_requirement":">= 0.1.0 < 2.0.0"},
-    {"name":"puppet/augeasproviders_core","version_requirement":">= 2.1.5 < 4.0.0"},
-    {"name":"puppet/augeasproviders_shellvar","version_requirement":">= 1.2.0 <= 5.0.0"}
+    {
+      "name": "puppetlabs/stdlib",
+      "version_requirement": ">= 4.5.0 < 9.0.0"
+    },
+    {
+      "name": "puppetlabs/concat",
+      "version_requirement": ">= 1.1.2 < 8.0.0"
+    },
+    {
+      "name": "puppetlabs/transition",
+      "version_requirement": ">= 0.1.0 < 2.0.0"
+    },
+    {
+      "name": "puppet/augeasproviders_core",
+      "version_requirement": ">= 2.1.5 < 4.0.0"
+    },
+    {
+      "name": "puppet/augeasproviders_shellvar",
+      "version_requirement": ">= 1.2.0 <= 5.0.0"
+    }
   ],
-  "tags": ["nfs", "nfs4", "exports", "mount", "mfc"],
   "operatingsystem_support": [
     {
       "operatingsystem": "Ubuntu",
@@ -74,5 +88,15 @@
       "name": "puppet",
       "version_requirement": ">= 4.0.0 < 8.0.0"
     }
-  ]
+  ],
+  "tags": [
+    "nfs",
+    "nfs4",
+    "exports",
+    "mount",
+    "mfc"
+  ],
+  "pdk-version": "2.7.1",
+  "template-url": "pdk-default#2.7.4",
+  "template-ref": "tags/2.7.4-0-g58edf57"
 }

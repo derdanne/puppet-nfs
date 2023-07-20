@@ -1,7 +1,17 @@
 {
-  "build": { "dockerfile": "Dockerfile" },
-  "features": {
-    "ghcr.io/devcontainers/features/docker-in-docker:2": {},
-    "ghcr.io/devcontainers/features/github-cli:1": {}
-  }
+	"name": "Puppet Development Kit (Community)",
+	"dockerFile": "Dockerfile",
+
+	"settings": {
+		"terminal.integrated.profiles.linux": {
+			"bash": {
+				"path": "bash"
+			}
+		}
+	},
+
+	"extensions": [
+		"puppet.puppet-vscode",
+		"rebornix.Ruby"
+	]
 }
