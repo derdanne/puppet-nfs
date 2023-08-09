@@ -50,12 +50,11 @@ define nfs::functions::create_export (
     }
 
     unless defined(File[$name]) {
-      file { $name:
-        ensure                  => directory,
+      filepath { $name:
+        ensure                  => present,
         owner                   => $owner,
         group                   => $group,
         mode                    => $mode,
-        selinux_ignore_defaults => true,
       }
     }
   }
