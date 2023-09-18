@@ -51,10 +51,10 @@ define nfs::functions::create_export (
 
     unless defined(File[$name]) {
       filepath { $name:
-        ensure                  => present,
-        owner                   => $owner,
-        group                   => $group,
-        mode                    => $mode,
+        ensure => present,
+        owner  => $owner,
+        group  => $group,
+        mode   => $mode,
       }
     }
   }
