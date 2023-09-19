@@ -11,5 +11,6 @@ fixtures:
       repo: "https://github.com/puppetlabs/puppetlabs-mount_core.git"
       puppet_version: ">= 6.0.0"
     transition: "https://github.com/puppetlabs/puppetlabs-transition.git"
+    filepath: "https://github.com/EdgeJ/puppet-filepath.git"
   symlinks:
     "nfs": "#{source_dir}"
