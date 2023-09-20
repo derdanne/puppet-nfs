@@ -1,6 +1,8 @@
 fixtures:
   repositories:
-    stdlib: "https://github.com/puppetlabs/puppetlabs-stdlib.git"
+    stdlib: 
+      repo: "https://github.com/puppetlabs/puppetlabs-stdlib.git"
+      puppet_version: "< 9.0.0"
     concat: "https://github.com/puppetlabs/puppetlabs-concat.git"
     augeasproviders_core: "https://github.com/voxpupuli/puppet-augeasproviders_core.git"
     augeasproviders_shellvar: "https://github.com/voxpupuli/puppet-augeasproviders_shellvar.git"
