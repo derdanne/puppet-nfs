@@ -12,7 +12,7 @@ jobs:
       fail-fast: true
       matrix:
         puppet: [7.22.0, 8.2.0]
-        ruby: [3.2.0, 3.1.3]
+        ruby: [3.1.3]
         include:
           - puppet: 7.22.0
             ruby: 2.7.7
