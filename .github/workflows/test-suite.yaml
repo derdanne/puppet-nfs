@@ -9,7 +9,7 @@ on:
 jobs:
   test-static-current:
     strategy:
-      fail-fast: false
+      fail-fast: true 
       matrix:
         puppet: [7.22.0, 8.2.0]
         ruby: [3.1.3]
@@ -57,7 +57,7 @@ jobs:
 
   test-integration:
     strategy:
-      fail-fast: false
+      fail-fast: true 
       matrix:
         puppet: [7.0.0, 8.0.0]
         beakerset: [ubuntu-18.04, ubuntu-20.04, ubuntu-22.04, centos-7, debian-10, debian-11]
