@@ -50,48 +50,6 @@ jobs:
       run: |
         PUPPET_VERSION=${{ matrix.puppet }} bundle exec rake rubocop
 
-  test-static-old:
-    strategy:
-      fail-fast: false
-      matrix:
-        puppet: [7.22.0, 8.2.0]
-        ruby: [2.7.7, 3.0.5, 3.1.3]
-
-    name: Static code analysis old
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-
-    steps:
-    - uses: actions/checkout@v3
-
-    - name: Set up Ruby
-      uses: ruby/setup-ruby@v1
-      with:
-        ruby-version: ${{ matrix.ruby }}
-        bundler-cache: true
-      env:
-        PUPPET_VERSION: ${{ matrix.puppet }}
-
-    - name: Run metadata lint
-      run: |
-        PUPPET_VERSION=${{ matrix.puppet }} bundle exec rake metadata_lint
-
-    - name: Run puppet lint
-      run: |
-        PUPPET_VERSION=${{ matrix.puppet }} bundle exec rake lint
-
-    - name: Run puppet syntax check
-      run: |
-        PUPPET_VERSION=${{ matrix.puppet }} bundle exec rake syntax
-
-    - name: Run puppet rspec tests
-      run: |
-        PUPPET_VERSION=${{ matrix.puppet }} STRICT_VARIABLES=yes bundle exec rake spec
-
-    - name: Run rubocop tests
-      run: |
-        PUPPET_VERSION=${{ matrix.puppet }} bundle exec rake rubocop
 
   test-integration:
     strategy:
