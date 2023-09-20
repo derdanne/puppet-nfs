@@ -12,7 +12,7 @@ jobs:
       fail-fast: true
       matrix:
         puppet: [8.2.0]
-        ruby: [3.0.5, 3.1.3]
+        ruby: [3.2.0, 3.1.3]
 
     name: Static code analysis new
     runs-on: ubuntu-latest
