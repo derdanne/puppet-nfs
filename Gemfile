@@ -59,5 +59,6 @@ end
 puppetversion = ENV['PUPPET_VERSION'].nil? ? '~> 4.0' : ENV['PUPPET_VERSION'].to_s
 gem 'puppet', puppetversion, require: false, groups: [:test]
 gem 'voxpupuli-test'
+gem 'voxpupuli-acceptance'
 
 # vim:ft=ruby
