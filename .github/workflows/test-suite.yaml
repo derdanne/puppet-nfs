@@ -125,3 +125,4 @@ jobs:
         BEAKER_set: ${{ matrix.beakerset }}
         BEAKER_PUPPET_COLLECTION: ${{ matrix.puppet }}
         PUPPET_INSTALL_TYPE: agent
+
