@@ -20,7 +20,7 @@ jobs:
       contents: read
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
 
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1
@@ -125,3 +125,4 @@ jobs:
         BEAKER_set: ${{ matrix.beakerset }}
         BEAKER_PUPPET_COLLECTION: ${{ matrix.puppet }}
         PUPPET_INSTALL_TYPE: agent
+

@@ -1,5 +1,6 @@
 # == Class: nfs::init
 #
+#
 # This class exists to
 # === Parameters
 #
