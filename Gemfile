@@ -28,7 +28,8 @@ group :test do
   gem 'rake',                                                       require: false
   gem 'rspec',                                                      require: false
   gem 'rspec-core',                                                 require: false
-  gem 'rspec-puppet',                                               require: false, git: 'https://github.com/puppetlabs/rspec-puppet.git'
+  gem 'rspec-puppet',                                               require: false
+  #gem 'rspec-puppet',                                               require: false, git: 'https://github.com/puppetlabs/rspec-puppet.git'
   gem 'rspec-puppet-facts',                                         require: false
   gem 'rspec-puppet-utils',                                         require: false
   gem 'rubocop',                                                    require: false
