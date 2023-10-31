@@ -5,6 +5,7 @@ RSpec.configure do |c|
 end
 
 require 'puppetlabs_spec_helper/module_spec_helper'
+require 'voxpupuli/test/spec_helper'
 require 'rspec-puppet-facts'
 include RspecPuppetFacts
 

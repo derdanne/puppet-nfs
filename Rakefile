@@ -4,6 +4,7 @@ require 'puppet-syntax/tasks/puppet-syntax'
 require 'metadata-json-lint/rake_task'
 require 'puppet_blacksmith/rake_tasks'
 require 'voxpupuli/release/rake_tasks'
+require 'voxpupuli/test/rake_tasks'
 require 'rubocop/rake_task'
 require 'puppet-strings/tasks'
 

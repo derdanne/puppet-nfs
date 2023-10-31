@@ -572,3 +572,6 @@ Style/MixinUsage:
 
 EmptyExampleGroup:
   Enabled: false
+
+inherit_gem:
+  voxpupuli-test: rubocop.yml
