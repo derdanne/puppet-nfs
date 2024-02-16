@@ -76,7 +76,7 @@
 # * Daniel Klockenkaemper <mailto:dk@marketing-factory.de>
 #
 
-define nfs::server::export(
+define nfs::server::export (
   $v3_export_name         = $name,
   $v4_export_name         = regsubst($name, '.*/(.*)', '\1' ),
   $clients                = 'localhost(ro)',
@@ -87,30 +87,27 @@ define nfs::server::export(
   $mount                  = undef,
   $remounts               = false,
   $atboot                 = false,
-  $options_nfsv4          = $::nfs::client_nfsv4_options,
-  $options_nfs            = $::nfs::client_nfs_options,
+  $options_nfsv4          = $nfs::client_nfsv4_options,
+  $options_nfs            = $nfs::client_nfs_options,
   $bindmount              = undef,
   $nfstag                 = undef,
   $owner                  = undef,
   $group                  = undef,
   $mode                   = undef,
-  $server                 = $::clientcert,
-  $nfsv4_bindmount_enable = $::nfs::nfsv4_bindmount_enable,
+  $server                 = $facts['clientcert'],
+  $nfsv4_bindmount_enable = $nfs::nfsv4_bindmount_enable,
 ) {
-
   if $nfs::server::nfs_v4 {
-
     if $nfsv4_bindmount_enable {
       $export_name = $v4_export_name
-      $export_title = "${::nfs::server::nfs_v4_export_root}/${export_name}"
-      $create_export_require = [ Nfs::Functions::Nfsv4_bindmount[$name] ]
+      $export_title = "${nfs::server::nfs_v4_export_root}/${export_name}"
+      $create_export_require = [Nfs::Functions::Nfsv4_bindmount[$name]]
 
       nfs::functions::nfsv4_bindmount { $name:
         ensure         => $ensure,
         v4_export_name => $export_name,
         bind           => $bind,
       }
-
     } else {
       $export_name = $name
       $export_title = $name
@@ -145,7 +142,6 @@ define nfs::server::export(
       }
     }
   } else {
-
     if $mount != undef {
       $mount_name = $mount
     } else {
@@ -171,6 +167,5 @@ define nfs::server::export(
         server      => $server,
       }
     }
-
   }
 }

@@ -12,15 +12,8 @@ end
 
 group :test do
   gem 'metadata-json-lint',                                         require: false
+  gem 'voxpupuli-test'
   gem 'puppet-blacksmith',                                          require: false, git: 'https://github.com/voxpupuli/puppet-blacksmith.git'
-  gem 'puppet-lint',                                                require: false, git: 'https://github.com/rodjek/puppet-lint.git'
-  gem 'puppet-lint-absolute_classname-check',                       require: false
-  gem 'puppet-lint-classes_and_types_beginning_with_digits-check',  require: false
-  gem 'puppet-lint-leading_zero-check',                             require: false
-  gem 'puppet-lint-trailing_comma-check',                           require: false
-  gem 'puppet-lint-unquoted_string-check',                          require: false
-  gem 'puppet-lint-variable_contains_upcase',                       require: false
-  gem 'puppet-lint-version_comparison-check',                       require: false
   gem 'puppet-strings',                                             require: false
   gem 'puppet-syntax',                                              require: false
   gem 'puppetlabs_spec_helper',                                     require: false

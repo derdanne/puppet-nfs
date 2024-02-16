@@ -22,7 +22,7 @@
 #
 
 define nfs::functions::mkdir (
-    $ensure = 'present',
+  $ensure = 'present',
 ) {
   if $ensure != 'absent' {
     exec { "mkdir_recurse_${name}":

@@ -49,7 +49,6 @@
 #   String. Overwrite mount root if differs from server config
 #
 
-
 # === Examples
 #
 # class { '::nfs':
@@ -77,27 +76,25 @@ define nfs::client::mount (
   $mount           = $title,
   $remounts        = false,
   $atboot          = false,
-  $options_nfsv4   = $::nfs::client_nfsv4_options,
-  $options_nfs     = $::nfs::client_nfs_options,
+  $options_nfsv4   = $nfs::client_nfsv4_options,
+  $options_nfs     = $nfs::client_nfs_options,
   $bindmount       = undef,
   $nfstag          = undef,
-  $nfs_v4          = $::nfs::client::nfs_v4,
+  $nfs_v4          = $nfs::client::nfs_v4,
   $owner           = undef,
   $group           = undef,
   $mode            = undef,
   $mount_root      = undef,
-  $manage_packages = $::nfs::manage_packages,
-  $client_packages = $::nfs::effective_client_packages,
+  $manage_packages = $nfs::manage_packages,
+  $client_packages = $nfs::effective_client_packages,
 ) {
-
   if $manage_packages and $client_packages != undef {
-    $mount_require = [ Nfs::Functions::Mkdir[$mount], Package[$client_packages] ]
+    $mount_require = [Nfs::Functions::Mkdir[$mount], Package[$client_packages]]
   } else {
-    $mount_require = [ Nfs::Functions::Mkdir[$mount] ]
+    $mount_require = [Nfs::Functions::Mkdir[$mount]]
   }
 
   if $nfs_v4 == true {
-
     if $mount_root == undef {
       $root = ''
     } else {
@@ -117,7 +114,7 @@ define nfs::client::mount (
     mount { "shared ${sharename} by ${server} on ${mount}":
       ensure   => $ensure,
       device   => "${server}:${sharename}",
-      fstype   => $::nfs::client_nfsv4_fstype,
+      fstype   => $nfs::client_nfsv4_fstype,
       name     => $mount,
       options  => $options_nfsv4,
       remounts => $remounts,
@@ -131,9 +128,7 @@ define nfs::client::mount (
         mount_name => $bindmount,
       }
     }
-
   } else {
-
     if $share != undef {
       $sharename = $share
     } else {
@@ -146,7 +141,7 @@ define nfs::client::mount (
     mount { "shared ${sharename} by ${server} on ${mount}":
       ensure   => $ensure,
       device   => "${server}:${sharename}",
-      fstype   => $::nfs::client_nfs_fstype,
+      fstype   => $nfs::client_nfs_fstype,
       name     => $mount,
       options  => $options_nfs,
       remounts => $remounts,

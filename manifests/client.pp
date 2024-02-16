@@ -16,14 +16,13 @@
 #
 
 class nfs::client (
-  $ensure                     = $::nfs::ensure,
-  $nfs_v4                     = $::nfs::nfs_v4_client,
-  $nfs_v4_mount_root          = $::nfs::nfs_v4_mount_root,
-  $nfs_v4_idmap_domain        = $::nfs::nfs_v4_idmap_domain,
+  $ensure                     = $nfs::ensure,
+  $nfs_v4                     = $nfs::nfs_v4_client,
+  $nfs_v4_mount_root          = $nfs::nfs_v4_mount_root,
+  $nfs_v4_idmap_domain        = $nfs::nfs_v4_idmap_domain,
 ) {
-
-  anchor {'nfs::client::begin': }
-  anchor {'nfs::client::end': }
+  anchor { 'nfs::client::begin': }
+  anchor { 'nfs::client::end': }
 
   # package(s)
   class { 'nfs::client::package': }

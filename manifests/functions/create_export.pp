@@ -45,7 +45,7 @@ define nfs::functions::create_export (
     $line = "${name} ${join(any2array($clients),' ')}\n"
 
     concat::fragment { $name:
-      target  => $::nfs::exports_file,
+      target  => $nfs::exports_file,
       content => $line,
     }
 

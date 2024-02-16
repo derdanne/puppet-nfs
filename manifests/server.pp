@@ -15,22 +15,21 @@
 #
 
 class nfs::server (
-  $ensure                       = $::nfs::ensure,
-  $nfs_v4                       = $::nfs::nfs_v4,
-  $nfs_v4_export_root           = $::nfs::nfs_v4_export_root,
-  $nfs_v4_export_root_clients   = $::nfs::nfs_v4_export_root_clients,
-  $nfs_v4_idmap_domain          = $::nfs::nfs_v4_idmap_domain,
-  $nfs_v4_root_export_ensure    = $::nfs::nfs_v4_root_export_ensure,
-  $nfs_v4_root_export_mount     = $::nfs::nfs_v4_root_export_mount,
-  $nfs_v4_root_export_remounts  = $::nfs::nfs_v4_root_export_remounts,
-  $nfs_v4_root_export_atboot    = $::nfs::nfs_v4_root_export_atboot ,
-  $nfs_v4_root_export_options   = $::nfs::nfs_v4_root_export_options,
-  $nfs_v4_root_export_bindmount = $::nfs::nfs_v4_root_export_bindmount,
-  $nfs_v4_root_export_tag       = $::nfs::nfs_v4_root_export_tag,
-){
-
-  anchor {'nfs::server::begin': }
-  anchor {'nfs::server::end': }
+  $ensure                       = $nfs::ensure,
+  $nfs_v4                       = $nfs::nfs_v4,
+  $nfs_v4_export_root           = $nfs::nfs_v4_export_root,
+  $nfs_v4_export_root_clients   = $nfs::nfs_v4_export_root_clients,
+  $nfs_v4_idmap_domain          = $nfs::nfs_v4_idmap_domain,
+  $nfs_v4_root_export_ensure    = $nfs::nfs_v4_root_export_ensure,
+  $nfs_v4_root_export_mount     = $nfs::nfs_v4_root_export_mount,
+  $nfs_v4_root_export_remounts  = $nfs::nfs_v4_root_export_remounts,
+  $nfs_v4_root_export_atboot    = $nfs::nfs_v4_root_export_atboot ,
+  $nfs_v4_root_export_options   = $nfs::nfs_v4_root_export_options,
+  $nfs_v4_root_export_bindmount = $nfs::nfs_v4_root_export_bindmount,
+  $nfs_v4_root_export_tag       = $nfs::nfs_v4_root_export_tag,
+) {
+  anchor { 'nfs::server::begin': }
+  anchor { 'nfs::server::end': }
 
   # package(s)
   class { 'nfs::server::package': }
